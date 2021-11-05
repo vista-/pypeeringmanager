@@ -1,0 +1,6 @@
+[build-system]
+requires = [
+    "pynetbox>=6.1.3",
+    "requests>=2.20.0,<3.0"
+]
+build-backend = "setuptools.build_meta"
