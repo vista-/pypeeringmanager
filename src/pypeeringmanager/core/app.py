@@ -1,5 +1,5 @@
 from pynetbox.core.app import App as PyNetboxApp
-from pypeeringmanager.models import peering
+from pypeeringmanager.models import peering, net, extras
 
 class App(PyNetboxApp):
     """ Represents apps in Peering-Manager.
@@ -11,4 +11,6 @@ class App(PyNetboxApp):
 
     models = {
         "peering": peering,
+        "net": net,
+        "extras": extras,
     }

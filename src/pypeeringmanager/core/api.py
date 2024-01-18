@@ -1,4 +1,4 @@
-import requests
+import requests, sys
 
 from pynetbox.core.api import Api as PyNetboxApi
 from pypeeringmanager.core.app import App
@@ -48,6 +48,8 @@ class Api(PyNetboxApi):
         self.threading = threading
 
         self.peering = App(self, "peering")
+        self.net = App(self, "net")
+        self.extras = App(self, "extras")
 
     @property
     def version(self):
