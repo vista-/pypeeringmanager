@@ -14,3 +14,6 @@ class App(PyNetboxApp):
         "net": net,
         "extras": extras,
     }
+
+    def _setmodel(self):
+        self.model = self.__class__.models[self.name] if self.name in self.__class__.models else None
