@@ -1,6 +1,8 @@
 from pynetbox.core.response import Record
-from pypeeringmanager.models.peering import Routers, InternetExchanges
 
 class Connections(Record):
+    from pypeeringmanager.models.peering import InternetExchanges
+    from pypeeringmanager.models.devices import Routers
+
     internet_exchange_point = InternetExchanges
-    router =  Routers
+    router = Routers

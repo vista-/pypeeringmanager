@@ -7,3 +7,21 @@ class ObjectChanges(Record):
 
     def __str__(self):
         return self.request_id
+
+class ConfigContextAssignments(Record):
+    pass
+
+class ConfigContexts(Record):
+    pass
+
+class ExportTemplates(Record):
+    pass
+
+class IxApi(Record):
+    pass
+
+class Tags(Record):
+    pass
+
+class Webhooks(Record):
+    pass
