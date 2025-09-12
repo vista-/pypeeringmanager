@@ -1,5 +1,4 @@
 from pynetbox.core.response import Record
-from pypeeringmanager.models.devices import Routers
 from pypeeringmanager.models.bgp import Relationships
 from pypeeringmanager.models.extras import Tags
 from pypeeringmanager.models.net import Connections
@@ -32,15 +31,18 @@ class InternetExchanges(Record):
     local_atutonomous_system = AutonomousSystems
     tags = Tags
 
-
 class DirectPeeringSessions(Record):
     autonomous_system = AutonomousSystems
     bgp_group = BGPGroups
     import_routing_policies = RoutingPolicies
     export_routing_policies = RoutingPolicies
-    router =  Routers
     relationship = Relationships
     tags = Tags
+
+    @property
+    def router(self):
+        from pypeeringmanager.models.devices import Routers
+        return Routers
 
     def __str__(self):
         return self.ip_address
