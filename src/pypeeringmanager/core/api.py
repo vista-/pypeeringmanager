@@ -53,7 +53,7 @@ class Api(PyNetboxApi):
 
     @property
     def version(self):
-       raise NotImplementedError
+        raise NotImplementedError
 
     def openapi(self):
-       raise NotImplementedError
+        raise NotImplementedError
