@@ -30,36 +30,28 @@ class InternetExchanges(Record):
     tags = Tags
 
 class DirectPeeringSessions(Record):
+    from pypeeringmanager.models.devices import Routers
+    from pypeeringmanager.models.bgp import Relationships
+
     autonomous_system = AutonomousSystems
     bgp_group = BGPGroups
     import_routing_policies = RoutingPolicies
     export_routing_policies = RoutingPolicies
     tags = Tags
-
-    @property
-    def router(self):
-        from pypeeringmanager.models.devices import Routers
-        return Routers
-
-    @property
-    def relationship(self):
-        from pypeeringmanager.models.bgp import Relationships
-        return Relationships
+    router = Routers
+    relationship = Relationships
 
     def __str__(self):
         return self.ip_address
 
 
 class InternetExchangePeeringSessions(Record):
+    from pypeeringmanager.models.net import Connections
     autonomous_system = AutonomousSystems
     import_routing_policies = RoutingPolicies
     export_routing_policies = RoutingPolicies
     tags = Tags
-
-    @property
-    def ixp_connection(self):
-        from pypeeringmanager.models.net import Connections
-        return Connections
+    ixp_connection = Connections
 
     def __str__(self):
         return self.ip_address
