@@ -18,9 +18,9 @@ class App(PyNetboxApp):
         "devices": devices,
         "extras": extras,
         "messaging": messaging,
-        "net": net,
         "peering": peering,
-        "peeringdb": peeringdb
+        "peeringdb": peeringdb,
+        "net": net
     }
 
     def _setmodel(self):
