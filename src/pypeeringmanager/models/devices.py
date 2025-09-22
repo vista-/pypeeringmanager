@@ -10,3 +10,4 @@ class Routers(Record):
     from pypeeringmanager.models.peering import AutonomousSystems
     platform = Platforms
     local_autonomous_system = AutonomousSystems
+    pass
