@@ -9,4 +9,3 @@ class Platforms(Record):
 class Routers(Record):
     platform = Platforms
     local_autonomous_system = None  # to be set in relations.py
-    pass
