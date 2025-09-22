@@ -3,7 +3,7 @@ try:
 except ImportError:
     raise ImportError("pynetbox is not installed. Please install it with 'pip install pynetbox'.")
 
-from pypeeringmanager.models import bgp, devices, extras, messaging, net, peering, peeringdb
+from pypeeringmanager.models import bgp, devices, extras, messaging, net, peering, peeringdb, relations
 
 class App(PyNetboxApp):
     """ Represents apps in Peering-Manager.
@@ -20,7 +20,8 @@ class App(PyNetboxApp):
         "messaging": messaging,
         "peering": peering,
         "peeringdb": peeringdb,
-        "net": net
+        "net": net,
+        "relations": relations
     }
 
     def _setmodel(self):
