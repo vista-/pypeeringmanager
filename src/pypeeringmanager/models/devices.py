@@ -7,6 +7,6 @@ class Platforms(Record):
     pass
 
 class Routers(Record):
-    from pypeeringmanager.models.peering import AutonomousSystems
     platform = Platforms
-    local_autonomous_system = AutonomousSystems
+    local_autonomous_system = None  # to be set in relations.py
+    pass

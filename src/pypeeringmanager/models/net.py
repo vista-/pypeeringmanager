@@ -1,8 +1,5 @@
 from pynetbox.core.response import Record
 
 class Connections(Record):
-    from pypeeringmanager.models.peering import InternetExchanges
-    from pypeeringmanager.models.devices import Routers
-
-    internet_exchange_point = InternetExchanges
-    router = Routers
+    internet_exchange_point = None  # to be set in relations.py
+    router = None  # to be set in relations.py
