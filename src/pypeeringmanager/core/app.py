@@ -1,4 +1,8 @@
-from pynetbox.core.app import App as PyNetboxApp
+try:
+    from pynetbox.core.app import App as PyNetboxApp
+except ImportError:
+    raise ImportError("pynetbox is not installed. Please install it with 'pip install pynetbox'.")
+
 from pypeeringmanager.models import bgp, devices, extras, messaging, net, peering, peeringdb
 
 class App(PyNetboxApp):
