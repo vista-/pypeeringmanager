@@ -1,5 +1,9 @@
-from pynetbox.core.app import App as PyNetboxApp
-from pypeeringmanager.models import peering, net, extras
+try:
+    from pynetbox.core.app import App as PyNetboxApp
+except ImportError:
+    raise ImportError("pynetbox is not installed. Please install it with 'pip install pynetbox'.")
+
+from pypeeringmanager.models import bgp, devices, extras, messaging, net, peering, peeringdb
 
 class App(PyNetboxApp):
     """ Represents apps in Peering-Manager.
@@ -10,9 +14,13 @@ class App(PyNetboxApp):
     """
 
     models = {
-        "peering": peering,
-        "net": net,
+        "bgp": bgp,
+        "devices": devices,
         "extras": extras,
+        "messaging": messaging,
+        "peering": peering,
+        "peeringdb": peeringdb,
+        "net": net,
     }
 
     def _setmodel(self):

@@ -1,4 +1,4 @@
 from pynetbox.core.response import Record
 
-class Connections(Record):
+class Relationships(Record):
     pass

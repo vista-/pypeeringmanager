@@ -47,13 +47,17 @@ class Api(PyNetboxApi):
             )
         self.threading = threading
 
-        self.peering = App(self, "peering")
-        self.net = App(self, "net")
+        self.bgp = App(self, "bgp")
+        self.devices = App(self, "devices")
         self.extras = App(self, "extras")
+        self.messaging = App(self, "messaging")
+        self.net = App(self, "net")
+        self.peering = App(self, "peering")
+        self.peeringdb = App(self, "peeringdb")
 
     @property
     def version(self):
-       raise NotImplementedError
+        raise NotImplementedError
 
     def openapi(self):
-       raise NotImplementedError
+        raise NotImplementedError
